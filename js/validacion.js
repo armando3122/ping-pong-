@@ -1,4 +1,4 @@
-//Funcion anonima que se ejecuta asi misma
+
 (function(){
 	 self.Board = function(width, height){
 		this.width = width;
@@ -46,7 +46,7 @@
 				return this.radius * 2;
 			},
 			colision: function(bar){
-				//reacciona a la colision con una barra
+				
 				var relative_intersect_y = (bar.y+ (bar.height/2)) - this.y;
 
 				var nomalized_intersect_y = relative_intersect_y/ (bar.height/2);
@@ -131,20 +131,20 @@
 	}
 
 	function hit(a,b){
-		//Revisa si a colisiona con b
+		
 		var hit = false;
-		//Colisiones horizontales
+		
 		if (b.x + b.width>= a.x && b.x< a.x + a.width) {
-			//Colisiones verticales
+			
 			if (b.y + b.height >= a.y && b.y < a.y + a.height)
 				hit = true;
 		}
-		//Colisiones de a con b 
+		
 		if (b.x <= a.x && b.x+b.width >= a.x + a.width) {
 			if (b.y <= a.y && b.y + b.height >= a.y + a.height)
 				hit = true;
 		}
-		//COlisiones b con a
+		
 		if (a.x<= b.x && a.x + a.width >= b.x + b.width) {
 
 			if (a.y<= b.y && a.y + a.height>= b.y+b.height)
